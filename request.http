@@ -1,0 +1,44 @@
+#### Endpoint to register a new user
+POST http://localhost:3333/register
+Content-Type: application/json
+
+{
+    "name": "Danilo Silva",
+    "email": "danilosilva2@example.com",
+    "password": "StrongPassword123"
+}
+
+
+
+### Endpoint to login a user
+POST http://localhost:3333/login
+Content-Type: application/json
+
+{
+    "email": "danilosilva@example.com",
+    "password": "StrongPassword123"
+}
+
+
+
+### Endpoint to get user data
+GET http://localhost:3333/user
+X-Access-Token: NTc0YjYzNGUtNDQ1MS00NmFjLTljYzYtZGVhMGJlMzcxZjdh.3Fb6kOmw991QY3E9hna07rCnQOTCRcxuwlyoasR-R_Q"
+
+
+
+### Endpoint to change user password
+POST http://localhost:3333/change-password
+X-Access-Token: ZGJlNWExYWUtOTdhZC00ZjA4LTg4YjYtNmRmMDA4NGMyZTI3.5ZKE1QHELQVeFzzlOgYaSnmPIzluDHMYQWIoyyKs5C0
+Content-Type: application/json
+
+{
+    "currentPassword": "StrongPassword123",
+    "newPassword": "StrongPassword1233"
+}
+
+
+
+### Endpoint for logging out a user
+GET http://localhost:3333/logout
+X-Access-Token: NTc0YjYzNGUtNDQ1MS00NmFjLTljYzYtZGVhMGJlMzcxZjdh.isskLwWt_UXDV10kilAfZXCEl7m0DczwEn0JAFiZieY
