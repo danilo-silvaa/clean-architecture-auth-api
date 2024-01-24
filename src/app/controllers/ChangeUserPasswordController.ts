@@ -12,12 +12,12 @@ interface ChangeUserPasswordControllerRequestBody {
 export class ChangeUserPasswordController implements IController {
     constructor (private changeUserPassword: IChangeUserPassword) {}
 
-    async handle (request: IHttpRequest): Promise<IControllerResponse> {
+    async handle (request: IHttpRequest<ChangeUserPasswordControllerRequestBody>): Promise<IControllerResponse> {
         const user = request.user;
         if (!user) return HttResponseError(InvalidAccessTokenError);
 
         const data = {
-            ... request.body as ChangeUserPasswordControllerRequestBody,
+            ... request.body,
             user
         }
         

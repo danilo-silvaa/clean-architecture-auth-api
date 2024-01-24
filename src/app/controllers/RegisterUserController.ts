@@ -12,8 +12,8 @@ interface RegisterUserRequestBody {
 export class RegisterUserController implements IController {
     constructor (private registerUser: IRegisterUser) {}
 
-    async handle (request: IHttpRequest): Promise<IControllerResponse> {
-        const result = await this.registerUser.execute(request.body as RegisterUserRequestBody);
+    async handle (request: IHttpRequest<RegisterUserRequestBody>): Promise<IControllerResponse> {
+        const result = await this.registerUser.execute(request.body);
         if (result.isLeft()) return HttResponseError(result.value);
 
         return OK({ accessToken: result.value });
